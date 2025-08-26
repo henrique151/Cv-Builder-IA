@@ -125,7 +125,7 @@ cv-builder-ai/
 1.  **Clone o repositório:**
 
     ```bash
-    git clone git@github.com:henrique151/cv-builder-ai.git
+    git clone git@github.com:henrique151/Cv-Builder-IA.git
     ```
 
 2.  **Acesse a pasta do projeto:**
