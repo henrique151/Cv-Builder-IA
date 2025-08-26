@@ -1,6 +1,4 @@
-Com certeza\! Adicionei a seção "Equipe e Responsabilidades" com a tabela que você pediu. Veja como ficou o README completo e atualizado:
-
------
+---
 
 # 📄 CV Builder AI
 
@@ -8,21 +6,21 @@ Este projeto é uma aplicação web moderna desenvolvida com **React 19**, **Typ
 
 ## 📌 Visão Geral
 
-O CV Builder AI foi projetado para simplificar a criação de currículos profissionais. A aplicação apresenta um layout *split-screen*, onde o usuário preenche um formulário na metade esquerda da tela enquanto visualiza o resultado instantaneamente na metade direita. O projeto foca em uma experiência de usuário fluida e otimizada para desktops.
+O CV Builder AI foi projetado para simplificar a criação de currículos profissionais. A aplicação apresenta um layout **split-screen**, onde o usuário preenche um formulário na metade esquerda da tela enquanto visualiza o resultado instantaneamente na metade direita. O projeto foca em uma experiência de usuário fluida e otimizada para desktops. Além disso, a aplicação conta com funções de IA para otimizar resumos e descrições de experiências profissionais.
 
------
+---
 
 ## 🎯 Objetivos Gerais
 
 Ao final do projeto, os desenvolvedores terão aprendido a:
 
-  - Criar uma aplicação interativa e complexa com React e TypeScript.
-  - Gerenciar estado compartilhado avançado para sincronização em tempo real.
-  - Implementar componentes controlados com validação de dados.
-  - Utilizar o padrão *Lifting State Up* para comunicação entre componentes.
-  - Aplicar renderização condicional para criar uma UI dinâmica e responsiva a estados.
+- Criar uma aplicação interativa e complexa com React e TypeScript.
+- Gerenciar estado compartilhado avançado para sincronização em tempo real.
+- Implementar componentes controlados com validação de dados.
+- Utilizar o padrão _Lifting State Up_ para comunicação entre componentes.
+- Aplicar conceitos avançados de estado compartilhado, componentes controlados e renderização condicional
 
------
+---
 
 ## 📂 Estrutura do Projeto
 
@@ -66,68 +64,68 @@ cv-builder-ai/
     └── index.css
 ```
 
------
+---
 
 ## 🧠 Conceitos Aplicados
 
-  - **React 19 + TypeScript**: Criação de componentes robustos e tipados.
-  - **TailwindCSS v4**: Estilização moderna e utilitária.
-  - **Vite**: Ambiente de desenvolvimento rápido e otimizado.
-  - **Gerenciamento de Estado**: Hooks do React (`useState`, `useReducer`) para controle de estado local e global.
-  - **Componentização**: Divisão da UI em componentes reutilizáveis e desacoplados.
-  - **Layout Split-Screen**: Interface otimizada para produtividade em desktops.
+- **React 19 + TypeScript**: Criação de componentes robustos e tipados.
+- **TailwindCSS v4**: Estilização moderna e utilitária.
+- **Vite**: Ambiente de desenvolvimento rápido e otimizado.
+- **Gerenciamento de Estado**: Hooks do React (`useState`, `useReducer`) para controle de estado local e global.
+- **Componentização**: Divisão da UI em componentes reutilizáveis e desacoplados.
+- **Layout Split-Screen**: Interface otimizada para produtividade em desktops.
 
------
+---
 
 ## 👥 Equipe e Responsabilidades
 
-| Responsável | Funcionalidade Principal |
-| :--- | :--- |
-| **Edlana Nascimento** | 01 - Layout Split-Screen |
-| **Henrique Porto** | 02 - Formulário de Dados Pessoais |
-| **Lucivaldo** | 03 - Gerenciamento de Habilidades |
-| **Priscila Brandão** | 04 - Gerenciamento de Experiências |
-| **Alize Leal** | 05 - Preview em Tempo Real |
+| Responsável           | Funcionalidade Principal           |
+| :-------------------- | :--------------------------------- |
+| **Edlana Nascimento** | 01 - Layout Split-Screen           |
+| **Henrique Porto**    | 02 - Formulário de Dados Pessoais  |
+| **Lucivaldo**         | 03 - Gerenciamento de Habilidades  |
+| **Priscila Brandão**  | 04 - Gerenciamento de Experiências |
+| **Alize Leal**        | 05 - Preview em Tempo Real         |
 
------
+---
 
 ## ✅ Funcionalidades do Projeto
 
 ### Funcionalidades Principais
 
-| Requisito | Descrição |
-| :--- | :--- |
-| **Layout Split-Screen** | Tela dividida em duas colunas (Formulário e Preview) com scroll independente. |
-| **Formulário de Dados** | Seções para Dados Pessoais, Habilidades e Experiências Profissionais. |
-| **Validação em Tempo Real**| Feedback instantâneo para o usuário sobre os dados inseridos. |
-| **Listas Dinâmicas** | Adicionar e remover habilidades e experiências de forma intuitiva. |
-| **Preview Instantâneo**| O currículo é atualizado em tempo real a cada alteração no formulário. |
+| Requisito                   | Descrição                                                                     |
+| :-------------------------- | :---------------------------------------------------------------------------- |
+| **Layout Split-Screen**     | Tela dividida em duas colunas (Formulário e Preview) com scroll independente. |
+| **Formulário de Dados**     | Seções para Dados Pessoais, Habilidades e Experiências Profissionais.         |
+| **Validação em Tempo Real** | Feedback instantâneo para o usuário sobre os dados inseridos.                 |
+| **Listas Dinâmicas**        | Adicionar e remover habilidades e experiências de forma intuitiva.            |
+| **Preview Instantâneo**     | O currículo é atualizado em tempo real a cada alteração no formulário.        |
 
 ### Funcionalidades Opcionais (Extras)
 
-| Requisito | Descrição |
-| :--- | :--- |
-| **Exportação para PDF**| Gera um arquivo PDF do currículo com layout profissional (A4). |
-| **Melhorias de UX** | Temas de cores, atalhos de teclado e modo de visualização completa. |
+| Requisito                 | Descrição                                                                  |
+| :------------------------ | :------------------------------------------------------------------------- |
+| **Exportação para PDF**   | Gera um arquivo PDF do currículo com layout profissional (A4).             |
+| **Melhorias de UX**       | Temas de cores, atalhos de teclado e modo de visualização completa.        |
 | **Persistência de Dados** | Salva o progresso do usuário no `localStorage` para evitar perda de dados. |
 
------
+---
 
 ## ⚙️ Configuração e Uso
 
 ### Pré-requisitos
 
-  - **Node.js** (versão 18 ou superior)
-  - **npm**, **yarn** ou **pnpm**
-  - **Git** instalado na sua máquina
-  - Um editor de código (VS Code recomendado)
+- **Node.js** (versão 18 ou superior)
+- **npm**, **yarn** ou **pnpm**
+- **Git** instalado na sua máquina
+- Um editor de código (VS Code recomendado)
 
 ### 🚀 Como Rodar o Projeto
 
 1.  **Clone o repositório:**
 
     ```bash
-    git clone git@github.com:seu-usuario/cv-builder-ai.git
+    git clone git@github.com:henrique151/cv-builder-ai.git
     ```
 
 2.  **Acesse a pasta do projeto:**
@@ -152,7 +150,7 @@ cv-builder-ai/
 
     > A aplicação estará disponível em `http://localhost:5173` (ou outra porta indicada no terminal).
 
------
+---
 
 ## 🌿 Git e GitHub — Guia Rápido para Colaboradores
 
@@ -196,11 +194,11 @@ cv-builder-ai/
 
 Pronto\! Sua branch já está no GitHub.
 
------
+---
 
 ## 🚀 Parte 2: Como Fazer um Pull Request (PR)
 
-> *Pull Request (PR) é como você avisa ao time que terminou uma parte do projeto e quer juntar com a versão principal (`main`).*
+> _Pull Request (PR) é como você avisa ao time que terminou uma parte do projeto e quer juntar com a versão principal (`main`)._
 
 1.  **Envie sua branch para o GitHub** com o comando `git push -u origin nome-da-sua-branch`.
 
@@ -209,16 +207,16 @@ Pronto\! Sua branch já está no GitHub.
 
 3.  **Preencha as informações do Pull Request:**
 
-      - **Título:** Escreva um resumo claro do que foi feito.
-          - Exemplo: `feat: Adiciona formulário de experiências profissionais`
-      - **Descrição:** Explique as mudanças e por que foram feitas.
-          - Exemplo: `Este PR implementa o componente para adicionar/remover experiências, incluindo validação de datas e o campo "Trabalho atual".`
+    - **Título:** Escreva um resumo claro do que foi feito.
+      - Exemplo: `feat: Adiciona formulário de experiências profissionais`
+    - **Descrição:** Explique as mudanças e por que foram feitas.
+      - Exemplo: `Este PR implementa o componente para adicionar/remover experiências, incluindo validação de datas e o campo "Trabalho atual".`
 
 4.  **Clique em “Create pull request”**.
 
 5.  **Se o link não aparecer**, vá até o repositório no GitHub, clique na aba **“Pull requests”** e depois em **“New pull request”**. Configure o `base` para `main` e o `compare` para a sua branch.
 
------
+---
 
 ## 📄 Licença
 
