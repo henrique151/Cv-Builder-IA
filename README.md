@@ -131,7 +131,7 @@ cv-builder-ai/
 2.  **Acesse a pasta do projeto:**
 
     ```bash
-    cd cv-builder-ai
+    cd Cv-Builder-IA
     ```
 
 3.  **Instale as dependências:**
