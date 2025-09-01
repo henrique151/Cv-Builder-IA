@@ -11,10 +11,14 @@ export interface Skill {
   level: "Básico" | "Intermediário" | "Avançado";
 }
 
-export interface Experience {
+export type ISOYearMonth = string;
+
+export type ExperienceType = {
+  id: string;                 
   company: string;
   role: string;
-  period: string;
+  start: ISOYearMonth;
+  end?: ISOYearMonth;
   description: string;
   current: boolean;
 }
