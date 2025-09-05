@@ -1,13 +1,15 @@
-import Experience from "./components/Form/Experience"
-import PersonalInfo from "./components/Form/PersonalInfo"
+import { Header } from "./components/Layout/Header"
+import Main from "./components/Layout/Main"
 
 function App() {
   
 
   return (
     <>
-      <PersonalInfo />
-      <Experience />
+      <div className="min-h-screen bg-gray-50"> 
+        <Header />
+        <Main />
+      </div>
     </>
   )
 }
