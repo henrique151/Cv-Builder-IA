@@ -45,6 +45,10 @@ export default function Experience() {
         setExperiences(prev => [...prev, newExperience]);
         handleCloseForm();
     };
+
+    const handleDeleteExperience = () => setFormData(
+        { id: "", company: "", role: "", start: "", end: "", description: "", current: false }
+    );
     
     return (        
         <>
@@ -86,7 +90,8 @@ export default function Experience() {
                                         </p>
                                     </div>
                                     <button 
-                                        className="p-2 text-red-500 hover:bg-red-50 rounded-md transition-colors" title="Remover experiência"><span className="material-symbols-outlined">delete</span>    
+                                        className="p-2 text-red-500 hover:bg-red-50 rounded-md transition-colors" title="Remover experiência"
+                                        onClick={handleDeleteExperience}><span className="material-symbols-outlined">delete</span>    
                                     </button>
                                 </div>
                                 <p className="text-gray-700 text-sm leading-relaxed">{ item.description }</p>
