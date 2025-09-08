@@ -14,11 +14,17 @@ export interface Skill {
 export type ISOYearMonth = string;
 
 export type ExperienceType = {
-  id: string;                 
+  id: string;
   company: string;
   role: string;
   start: ISOYearMonth;
   end?: ISOYearMonth;
   description: string;
   current: boolean;
+};
+
+export interface CVData {
+  personalInfo: PersonalInfo;
+  skills: Skill[];
+  experiences: ExperienceType[];
 }
