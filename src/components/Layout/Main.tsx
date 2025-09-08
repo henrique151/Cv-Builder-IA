@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { CVHook } from "../../hooks/useCVData";
 import Experience from "../Form/Experience";
 import PersonalInfo from "../Form/PersonalInfo";
@@ -10,9 +11,20 @@ interface Props {
 }
 
 export default function Main({ cvHook }: Props) {
+  // Estado global de API Key e tipo de modelo
+    const [apiKey, setApiKey] = useState("");
+    const [apiType, setApiType] = useState<"chat" | "gemini">("chat");
+    const [isApiValid, setIsApiValid] = useState(false);
+
   return (
     <>
-      <Header />
+      <Header
+        apiKey={apiKey}
+        onApiKeyChange={setApiKey}
+        apiType={apiType}
+        onApiTypeChange={setApiType}
+        onApiValidated={setIsApiValid}
+      />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -21,12 +33,17 @@ export default function Main({ cvHook }: Props) {
             <PersonalInfo
               personalInfo={cvHook.cvData.personalInfo}
               updatePersonalInfo={cvHook.updatePersonalInfo}
+              apiKey={apiKey}
+              apiType={apiType}
+              isApiValid={isApiValid}
             />
+
             <Skills
               skills={cvHook.cvData.skills}
               addSkill={cvHook.addSkill}
               removeSkill={cvHook.removeSkill}
             />
+
             <Experience
               experiences={cvHook.cvData.experiences}
               addExperience={cvHook.addExperience}

@@ -1,6 +1,5 @@
 import type { PersonalInfo } from "../../types/cv.types";
 
-
 export default function PersonalHeader({ info }: { info: PersonalInfo }) {
   return (
     <div className="border-b pb-4">
@@ -12,11 +11,14 @@ export default function PersonalHeader({ info }: { info: PersonalInfo }) {
         {info.phone || <span className="text-gray-400 italic">Telefone não informado</span>}
       </p>
       {info.linkedin && (
-        <a href={info.linkedin} className="text-blue-600 text-sm">
+        <a href={info.linkedin} className="text-blue-600 text-sm break-all">
           {info.linkedin}
         </a>
       )}
-      <p className="mt-2 text-sm text-gray-700">
+      <p
+        className="mt-2 text-sm text-gray-700 max-h-24 overflow-y-auto break-words"
+        title={info.summary}
+      >
         {info.summary || <span className="text-gray-400 italic">Resumo profissional vazio</span>}
       </p>
     </div>

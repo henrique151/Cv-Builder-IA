@@ -1,42 +1,76 @@
 import { useState } from "react";
+import { useToast } from "../../hooks/useToast";
 
-export function Header() {
-    const [apiKey, setApiKey] = useState("");
-    
-    return (
-        <div className="bg-white shadow-sm border-b">
-            <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                <div className="flex items-center justify-between">
-                    <div>
-                        <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                            <span className="material-symbols-outlined">smart_toy</span>Gerador de Currículos AI
-                        </h1>
-                        <p className="text-sm text-gray-500 mt-1">Gerador Inteligente de Currículos com IA</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                        <div className="flex items-center gap-2">
-                            <div className="relative">
-                                <span className="material-symbols-outlined">key</span>
-                                <input 
-                                type="password" 
-                                className="pl-10 pr-10 py-2 w-64 text-sm border rounded-lg transition-all duration-200 border-gray-300 bg-white focus:border-green-500 focus:ring-green-200 focus:outline-none focus:ring-2" 
-                                placeholder="Cole aqui sua API Key" 
-                                value={apiKey} 
-                                onChange={(e) => setApiKey(e.target.value)}/>
-                            </div>
-                        </div>
-                            <div className="relative">
-                                <button disabled={true} 
-                                className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:hover:scale-100 flex items-center gap-3 font-medium">
-                                    <span className="material-symbols-outlined">file_export</span>
-                                    <span>Exportar PDF</span>
-                                </button>
-                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity">Adicione informações ao currículo primeiro
-                                </div>
-                            </div>                       
-                    </div>
-                </div>
-            </div>
+interface HeaderProps {
+  apiKey: string;
+  onApiKeyChange: (key: string) => void;
+  onApiValidated: (valid: boolean) => void; // callback para informar se API está válida
+}
+
+export function Header({ apiKey, onApiKeyChange, onApiValidated }: HeaderProps) {
+  const [loading, setLoading] = useState(false);
+  const toast = useToast();
+
+  const saveApiKey = () => {
+    if (!apiKey) {
+      toast.addToast({ type: "error", message: "Insira uma API Key!" });
+      onApiValidated(false);
+      return;
+    }
+
+    toast.addToast({ type: "success", message: "API Key salva com sucesso!" });
+    onApiValidated(true);
+  };
+
+  return (
+    <div className="bg-white shadow-sm border-b">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        {/* Título */}
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+            <span className="material-symbols-outlined">smart_toy</span>
+            Gerador de Currículos AI
+          </h1>
+          <p className="text-sm text-gray-500 mt-1">Gerador Inteligente de Currículos com IA</p>
         </div>
-    );
+
+        {/* Configurações da API */}
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-3 w-full md:w-auto">
+          <div className="flex items-center gap-2">
+            <div className="relative">
+              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+                key
+              </span>
+              <input
+                type="password"
+                className="pl-10 pr-4 py-2 w-64 text-sm border rounded-lg transition-all duration-200 border-gray-300 bg-white focus:border-green-500 focus:ring-green-200 focus:outline-none focus:ring-2"
+                placeholder="Cole sua API Key Gemini"
+                value={apiKey}
+                onChange={(e) => onApiKeyChange(e.target.value)}
+              />
+            </div>
+          </div>
+
+          {/* Só Gemini agora */}
+          <select
+            value="gemini"
+            disabled
+            className="border border-gray-300 rounded-lg px-3 py-2 text-sm bg-gray-100 cursor-not-allowed"
+          >
+            <option value="gemini">Gemini</option>
+          </select>
+
+          <button
+            onClick={saveApiKey}
+            disabled={loading}
+            className={`px-4 py-2 rounded-md text-white ${
+              loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"
+            } transition-colors`}
+          >
+            {loading ? "Salvando..." : "Salvar"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
